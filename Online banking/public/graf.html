@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js Graf</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="profitChart" width="400" height="200"></canvas>
+
+    <script>
+        fetch('graf.php')
+            .then(response => response.json())
+            .then(data => {
+                var ctx = document.getElementById("profitChart").getContext("2d");
+
+                var myChart = new Chart(ctx, {
+                    type: "line", // Promenite tip grafika na "line"
+                    data: {
+                        labels: data.datumi,
+                        datasets: [{
+                            label: "Profit od provizije",
+                            data: data.profitti,
+                            fill: false, // Dodajte fill: false za liniju grafika
+                            backgroundColor: "rgba(75, 192, 192, 0.2)",
+                            borderColor: "rgba(75, 192, 192, 1)",
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            x: { // Dodajte ove opcije za x-osu (datume)
+                                type: 'time',
+                                time: {
+                                    unit: 'day' // Možete promeniti jedinicu vremena prema potrebi
+                                }
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zatvaranje naloga</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+        <h1>Zatvaranje naloga</h1>
+        <form method="POST" action="../models/zatvaranjeNaloga.php">
+            <label for="nova_aktivnost">Nova aktivnost:</label><br>
+            <select name="nova_aktivnost">
+                <option value="Aktivan">Aktivan</option>
+                <option value="Zatvoren">Zatvoren</option>
+            </select>
+            <div class="btn-field">
+                <button type="submit">Promeni Aktivnost</button>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

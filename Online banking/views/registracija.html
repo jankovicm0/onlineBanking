@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script src="registracija.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Sign Up</h1>
+            <form method="POST" action="../models/registracija.php">
+                <label for="ime">Ime:</label><br>
+                <input type="text" name="ime" id="ime" required><br>
+            
+                <label for="prezime">Prezime:</label><br>
+                <input type="text" name="prezime" id="prezime" required><br>
+            
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" required><br>
+                <p id="error-message-email" style="color: red;"></p>
+            
+                <label for="lozinka">Lozinka:</label><br>
+                <input type="password" name="lozinka" id="lozinka" required><br>
+            
+                <label for="jmbg">JMBG:</label><br>
+                <input type="text" name="jmbg" id="jmbg" required><br>
+                <p id="error-message-jmbg" style="color: red;"></p>
+            
+                <label for="adresa">Adresa:</label><br>
+                <input type="text" name="adresa" required><br>
+            
+                <label for="broj_telefona">Broj telefona:</label><br>
+                <input type="text" name="broj_telefona" id="broj_telefona" required><br>
+                
+            <div class="labeli">
+                <div id="lab1">
+                <label for="tip_racuna">Tip računa:</label><br>
+                <select name="tip_racuna" required>
+                    <option value="Tekuci">Tekuci</option>
+                    <option value="Devizni">Devizni</option>
+                    <option value="Stedni">Stedni</option>
+                </select>
+            </div>
+            <div id="lab2">
+                <label for="valuta">Valuta:</label><br>
+                <select name="valuta" required><br>
+                    <option value="RSD">RSD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+            </div>
+                <div class="btn-field">
+                    <button type="submit">Registracija</button>
+                </div>
+                <p>Zaboravljena sifra? <a href="#">Klikni ovde!</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

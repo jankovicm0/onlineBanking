@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Panel</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+        <div class="form-box">
+    <h1>Administrator Panel</h1>
+    <form method="POST" action="../models/promenaAktivnosti.php">
+                <label for="broj_racuna">Broj racuna:</label><br>
+                <input type="text" name="broj_racuna" required><br>
+
+                <label for="nova_aktivnost">Nova aktivnost:</label><br>
+                <select name="nova_aktivnost">
+                    <option value="Aktivan">Aktivan</option>
+                    <option value="Zatvoren">Zatvoren</option>
+                    <option value="Blokiran">Blokiran</option>
+                </select>
+                <div class="btn-field">
+                    <button type="submit">Promeni Aktivnost</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
