@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $prezime = $_POST['prezime'];
     $email = $_POST['email'];
     $lozinka = $_POST['lozinka'];
-    // Registration requests must never select their own privilege level.
     $uloga = $defaultUloga;
     $jmbg = $_POST['jmbg'];
     $adresa = $_POST['adresa'];
