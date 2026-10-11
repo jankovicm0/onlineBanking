@@ -18,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($stmt->fetch()) {
             if (password_verify($lozinka, $hashedPassword)) {
+                // Rotate the session ID to reduce session fixation risk.
+                session_regenerate_id(true);
                 $_SESSION['user_id'] = $korisnikId;
                 $_SESSION['user_email'] = $korisnikEmail;
 
