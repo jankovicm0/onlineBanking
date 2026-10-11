@@ -1,58 +1,41 @@
-# Online Banking — Academic PHP Project
+# Online Banking
 
-> An educational web application that explores everyday banking workflows using PHP and MySQL. **Demo/learning software only — not suitable for real money or personal information.**
+A PHP and MySQL banking application I made at university. It includes account registration, login, transfers, account management and a few basic reports.
 
-## Overview
-
-This university project contains a PHP web application for user accounts, transfers, account administration and simple reports. The repository preserves its original academic structure inside the `Online banking/` directory.
-
-### Features visible in the source
-
-- User registration and sign-in with PHP sessions
-- Password hashing and verification during registration/login
-- Account balance and transfer workflow with a commission calculation
-- User/account management and administrative pages
-- Basic reports and charts for users and commissions
-
-These describe code paths in the repository, **not** tested production guarantees.
+The code is kept as an older coursework project. It isn't suitable for actual banking or handling real customer data.
 
 ## Stack
 
-PHP, MySQL (MySQLi), HTML, CSS, JavaScript, and session-based authentication.
+PHP · MySQL/MySQLi · HTML · CSS · JavaScript
 
-## Repository layout
+## What it does
+
+- Account registration and session-based login
+- Transfers between accounts, with a commission
+- Account and user management pages
+- Transaction views and basic charts
+
+The application lives in the [`Online banking/`](Online%20banking/) directory:
 
 ```text
 Online banking/
-├── controllers/    # Database connection
-├── core/           # Transfer and reporting handlers
-├── models/         # Page handlers and workflows
-├── public/         # CSS, JavaScript, images, basic pages
-├── views/          # HTML views
-└── Online_banking.xlsx
+├── controllers/
+├── core/
+├── models/
+├── public/
+└── views/
 ```
 
-## Running locally
+## Running it
 
-This is a legacy academic project rather than a packaged, one-command application.
+It was built for a local PHP/MySQL environment, not as a one-command project.
 
-1. Install PHP with the `mysqli` extension and a local MySQL server (e.g., a local Apache/PHP stack).
-2. Review `Online banking/controllers/baza.php` and supply **your own local database settings**. Never publish credentials.
-3. Create a compatible database schema. **A reproducible SQL migration/schema file is not currently supplied**, so the database tables and columns must be reconstructed before the app can run reliably.
-4. Serve the `Online banking/` directory through your local PHP/Apache setup and follow the relevant `models/` pages for registration or login.
+You need PHP with the MySQLi extension, a MySQL server and a compatible database schema. Update the local connection settings in `Online banking/controllers/baza.php` for your machine, then serve the application through your local PHP/Apache setup.
 
-**Do not expose the current implementation to the public internet.** Local setup is not yet verified from a clean machine.
+The original repository doesn't contain a SQL schema or migrations, so there's still setup work to make it reproducible from scratch. Please use dummy data only.
 
-## Known limitations
+## Things I'd improve
 
-- Account-transfer logic requires database transactions, locking, and stronger input validation.
-- Some registration-controlled fields (including role/account metadata) should be server-controlled rather than accepted from the client.
-- The project needs proper authorization and session-hardening review.
-- Tests, database migrations, and a reproducible setup are not yet provided.
-- Any example spreadsheet data should be reviewed before external reuse, especially if it contains personal information.
+Transfers should use database transactions so a failed step can't leave two balances inconsistent. Input validation, authorization, session handling and registration privileges also need more attention.
 
-See [IMPROVEMENT_PLAN.md](docs/IMPROVEMENT_PLAN.md) for a prioritized roadmap.
-
-## Project status
-
-**University project / historical snapshot.** Included to demonstrate early full-stack development experience, not as a production banking system.
+I've noted the main issues in [the improvement plan](docs/IMPROVEMENT_PLAN.md). This is an academic example, not a production-ready financial system.
