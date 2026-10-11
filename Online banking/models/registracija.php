@@ -16,7 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $prezime = $_POST['prezime'];
     $email = $_POST['email'];
     $lozinka = $_POST['lozinka'];
-    $uloga = $_POST['uloga'] ?? $defaultUloga;
+    // Registration requests must never select their own privilege level.
+    $uloga = $defaultUloga;
     $jmbg = $_POST['jmbg'];
     $adresa = $_POST['adresa'];
     $broj_telefona = $_POST['broj_telefona'];
@@ -63,9 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $tip_racuna = $_POST['tip_racuna'];
     $valuta = $_POST['valuta'];
-    $aktivnost_racuna = $_POST['aktivnost_racuna'] ?? $defaultAktivnost;
-    $datum_otvaranja = $_POST['datum_otvaranja'] ?? $defaultDatumOtvaranja;
-    $broj_racuna = $_POST['broj_racuna'] ?? $brojRacuna;
+    $aktivnost_racuna = $defaultAktivnost;
+    $datum_otvaranja = $defaultDatumOtvaranja;
+    $broj_racuna = $brojRacuna;
 
     $upitKorisnici = "INSERT INTO korisnici (ime, prezime, email, lozinka, uloga, jmbg, adresa, broj_telefona) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     if ($stmtKorisnici = $conn->prepare($upitKorisnici)) {
